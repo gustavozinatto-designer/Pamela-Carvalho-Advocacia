@@ -36,19 +36,19 @@ export default function FAQSection() {
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16 lg:mb-32 max-w-2xl mx-auto">
+        <div className="text-center mb-16 lg:mb-32 max-w-2xl mx-auto min-w-0">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex items-center justify-center gap-4 mb-6"
+            className="flex items-center justify-center gap-3 sm:gap-4 mb-6"
           >
-            <div className="w-8 h-[1px] bg-petroleum/10" />
-            <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-petroleum/40 font-medium font-sans">
+            <div className="w-8 h-[1px] bg-petroleum/10 shrink-0" />
+            <span className="text-[10px] sm:text-[11px] lg:text-xs uppercase tracking-[0.4em] sm:tracking-[0.6em] text-petroleum/70 font-bold font-sans">
               Dúvidas Frequentes
             </span>
-            <div className="w-8 h-[1px] bg-petroleum/10" />
+            <div className="w-8 h-[1px] bg-petroleum/10 shrink-0" />
           </motion.div>
           
           <motion.h2 
@@ -56,14 +56,14 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-petroleum text-[clamp(28px,4vw,48px)] leading-tight font-light tracking-tight"
+            className="font-serif text-petroleum text-[clamp(24px,7vw,48px)] leading-[1.1] font-normal tracking-tight break-words max-w-full"
           >
-            Perguntas que merecem <br className="hidden lg:block" /> respostas diretas
+            Perguntas que merecem <br className="hidden xs:block" /> respostas diretas
           </motion.h2>
         </div>
 
         {/* Accordion Container */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto min-w-0">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -78,21 +78,21 @@ export default function FAQSection() {
               <button
                 id={`faq-trigger-${index}`}
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full py-7 sm:py-8 lg:py-10 flex items-center justify-between text-left group gap-6"
+                className="w-full py-7 sm:py-8 lg:py-10 flex items-center justify-between text-left group gap-4 sm:gap-6 min-w-0"
               >
-                <span className={`text-lg sm:text-xl lg:text-[22px] font-serif transition-all duration-500 pr-2 leading-tight break-words ${
-                  openIndex === index ? 'text-petroleum shadow-text-subtle' : 'text-petroleum/80 group-hover:text-petroleum'
+                <span className={`text-lg sm:text-xl lg:text-[22px] font-serif transition-colors duration-500 pr-2 leading-tight break-words min-w-0 flex-1 ${
+                  openIndex === index ? 'text-petroleum' : 'text-petroleum/80 group-hover:text-petroleum'
                 }`}>
                   {faq.question}
                 </span>
                 
                 <div className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-petroleum/10 rounded-full transition-all duration-500 shrink-0 ${
-                  openIndex === index ? 'bg-petroleum border-petroleum rotate-180' : 'rotate-0 sm:group-hover:border-petroleum'
+                  openIndex === index ? 'bg-petroleum border-petroleum rotate-180 text-white' : 'rotate-0 sm:group-hover:border-petroleum text-petroleum/40 group-hover:text-petroleum'
                 }`}>
                   {openIndex === index ? (
-                    <Minus className="w-4 h-4 text-white" strokeWidth={1.5} />
+                    <Minus className="w-4 h-4" strokeWidth={1.5} />
                   ) : (
-                    <Plus className="w-4 h-4 text-petroleum/40" strokeWidth={1.5} />
+                    <Plus className="w-4 h-4" strokeWidth={1.5} />
                   )}
                 </div>
               </button>
@@ -107,7 +107,7 @@ export default function FAQSection() {
                     className="overflow-hidden"
                   >
                     <div className="pb-8 sm:pb-10 lg:pb-12 pr-4 sm:pr-12">
-                      <p className="text-refined-gray text-base leading-relaxed font-light max-w-3xl">
+                      <p className="text-refined-gray text-base leading-relaxed font-normal opacity-90 max-w-3xl break-words">
                         {faq.answer}
                       </p>
                     </div>
@@ -128,7 +128,7 @@ export default function FAQSection() {
             className="flex flex-col items-center"
           >
             <div className="w-12 h-[1px] bg-petroleum/10 mb-6" />
-            <p className="text-petroleum/40 font-sans text-[10px] tracking-widest uppercase">
+            <p className="text-petroleum/60 font-sans text-[11px] tracking-widest uppercase font-medium">
               Ainda tem alguma dúvida?
             </p>
             <a 

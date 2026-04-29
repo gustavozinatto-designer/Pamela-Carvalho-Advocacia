@@ -37,14 +37,14 @@ export default function SocialProofSection() {
   };
 
   return (
-    <section className="relative py-20 sm:py-24 lg:py-40 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10 font-sans">
+    <section className="relative py-20 sm:py-24 lg:py-40 bg-white overflow-hidden w-full max-w-full">
+      <div className="max-w-[1440px] mx-auto px-6 xs:px-8 sm:px-10 lg:px-20 relative z-10 font-sans w-full overflow-hidden">
         
-        {/* Layout following the reference: Left Header, Right List */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start">
+        {/* Layout: Left Header, Right List */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start w-full">
           
-          {/* Left Column: The "Complexity and Scale" style header */}
-          <div className="max-w-xl">
+          {/* Left Column */}
+          <div className="w-full max-w-full lg:max-w-xl min-w-0 overflow-hidden">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -52,8 +52,8 @@ export default function SocialProofSection() {
               transition={{ duration: 0.8 }}
               className="flex items-center gap-4 mb-6"
             >
-              <div className="w-8 h-[1px] bg-black/10" />
-              <span className="text-[10px] sm:text-[11px] tracking-[0.2em] font-bold text-[#1C1C1C]/40 uppercase">
+              <div className="w-8 h-[1px] bg-black/10 shrink-0" />
+              <span className="text-[11px] sm:text-[12px] tracking-[0.3em] font-bold text-[#1C1C1C]/40 uppercase">
                 DIFERENCIAL
               </span>
             </motion.div>
@@ -63,9 +63,9 @@ export default function SocialProofSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-serif text-[#1C1C1C] text-[clamp(26px,6vw,86px)] leading-[0.95] tracking-tight mb-10 break-words"
+              className="font-serif text-[#1C1C1C] text-[clamp(24px,8vw,82px)] leading-[1.05] tracking-tight mb-10 break-words w-full"
             >
-              Por que trabalhar <br className="hidden sm:block" />
+              Por que trabalhar <br className="hidden xs:block" />
               <span className="text-[#1C1C1C]/40">comigo</span>
             </motion.h2>
 
@@ -74,7 +74,7 @@ export default function SocialProofSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[#6B6B6B] text-base sm:text-lg lg:text-[18px] leading-relaxed mb-12 max-w-sm font-light"
+              className="text-[#6B6B6B] text-base sm:text-lg lg:text-[18px] leading-relaxed mb-12 w-full sm:max-w-sm font-normal break-words"
             >
               Minhas advocacia não é construída sobre volume de processos. É construída sobre qualidade de atendimento e profundidade de dedicação a cada caso. É direto comigo.
             </motion.p>
@@ -91,8 +91,8 @@ export default function SocialProofSection() {
             </motion.button>
           </div>
 
-          {/* Right Column: List items separated by lines with numbers on the right */}
-          <div className="w-full">
+          {/* Right Column List */}
+          <div className="w-full min-w-0 overflow-hidden">
             <div className="relative border-b border-[#EDEDED] w-full">
               {differentials.map((item, index) => (
                 <motion.div
@@ -101,26 +101,25 @@ export default function SocialProofSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group py-8 sm:py-10 border-t border-[#EDEDED] flex justify-between items-start gap-8 sm:gap-12"
+                  className="group py-8 sm:py-10 border-t border-[#EDEDED] flex justify-between items-start gap-6 sm:gap-12 min-w-0"
                 >
-                  <div className="max-w-[400px]">
-                    <h3 className="text-[#1C1C1C] text-lg sm:text-[20px] font-medium tracking-tight mb-3">
+                  <div className="max-w-full sm:max-w-[400px] min-w-0 flex-1">
+                    <h3 className="text-[#1C1C1C] text-lg sm:text-[20px] font-medium tracking-tight mb-3 break-words">
                       {item.title}
                     </h3>
-                    <p className="text-[#6B6B6B] text-sm sm:text-[15px] leading-relaxed font-light opacity-80">
+                    <p className="text-[#6B6B6B] text-sm sm:text-[15px] leading-relaxed font-normal opacity-90 break-words">
                       {item.description}
                     </p>
                   </div>
-                  <span className="text-[12px] sm:text-[14px] font-bold text-[#1C1C1C] pt-1">
+                  <span className="text-[12px] sm:text-[14px] font-bold text-[#1C1C1C] pt-1 shrink-0">
                     {item.number}
                   </span>
                 </motion.div>
               ))}
             </div>
             
-            {/* Secondary footer text following reference style */}
             <div className="mt-16 sm:mt-20">
-              <span className="text-[9px] sm:text-[11px] tracking-[0.2em] font-bold text-[#1C1C1C]/40 uppercase block text-center lg:text-left">
+              <span className="text-[10px] sm:text-[12px] tracking-[0.25em] font-bold text-[#1C1C1C]/50 uppercase block text-center lg:text-left break-words">
                 Atuação em Família e Sucessões • Online e Presencial
               </span>
             </div>
@@ -130,4 +129,3 @@ export default function SocialProofSection() {
     </section>
   );
 }
-

@@ -51,18 +51,24 @@ export default function Hero() {
   };
 
   return (
-    <section id="inicio" className="relative w-full min-h-[100dvh] lg:h-screen lg:min-h-[700px] overflow-hidden flex flex-col bg-deep-navy">
+    <section id="inicio" className="relative w-full min-h-[100dvh] flex flex-col bg-deep-navy overflow-hidden">
       {/* Background with uniform overlay */}
       <div className="absolute inset-0 z-0">
+        <picture className="w-full h-full block">
+          <source 
+            media="(min-width: 1921px)" 
+            srcSet="https://i.postimg.cc/HxMJDjnY/photorealistic-lawyer-environment-(2).webp" 
+          />
           <motion.img
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
-          src="https://i.postimg.cc/rFMYpp7Y/photorealistic-lawyer-environment.webp"
-          alt="Dra. Pâmela Regina Carvalho em seu escritório de advocacia"
-          className="w-full h-full object-cover object-[75%_center] sm:object-center"
-          referrerPolicy="no-referrer"
-        />
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            src="https://i.postimg.cc/rFMYpp7Y/photorealistic-lawyer-environment.webp"
+            alt="Dra. Pâmela Regina Carvalho"
+            className="w-full h-full object-cover object-center block"
+            referrerPolicy="no-referrer"
+          />
+        </picture>
         <div className="absolute inset-0 overlay-premium z-10" />
       </div>
 
@@ -72,12 +78,12 @@ export default function Hero() {
           isScrolled ? 'bg-deep-navy/95 backdrop-blur-md py-4 border-b border-white/5 shadow-2xl' : 'bg-transparent py-6 lg:py-10'
         }`}
       >
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between px-5 sm:px-10 lg:px-20 w-full">
-          <div className="flex flex-col group cursor-pointer">
-            <span className="font-serif text-white text-[13px] xs:text-sm sm:text-lg lg:text-xl tracking-[0.08em] sm:tracking-[0.12em] font-light transition-colors hover:text-metallic whitespace-nowrap">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-20 w-full relative">
+          <div className="flex flex-col group cursor-pointer max-w-[180px] xs:max-w-[240px] sm:max-w-none min-w-0">
+            <span className="font-serif text-white text-[13px] xs:text-base sm:text-lg lg:text-xl tracking-[0.05em] sm:tracking-[0.12em] font-medium transition-colors hover:text-metallic break-words leading-tight">
               PÂMELA REGINA CARVALHO
             </span>
-            <span className="text-metallic text-[8px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.25em] uppercase mt-0.5 sm:mt-1 font-light opacity-80">
+            <span className="text-metallic text-[8px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.25em] uppercase mt-0.5 sm:mt-1 font-medium opacity-90 break-words">
               Advocacia Familiar
             </span>
           </div>
@@ -90,7 +96,7 @@ export default function Hero() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-xs uppercase tracking-[0.2em] text-white/70 hover:text-white transition-colors font-light"
+                  className="text-[11px] lg:text-xs uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors font-medium"
                 >
                   {item.name}
                 </a>
@@ -100,39 +106,38 @@ export default function Hero() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/20 px-6 py-2.5 text-[11px] uppercase tracking-[0.2em] text-white hover:bg-white hover:text-deep-navy transition-all duration-500 font-light"
+              className="border border-white/30 px-6 py-2.5 text-[11px] lg:text-xs uppercase tracking-[0.2em] text-white hover:bg-white hover:text-deep-navy transition-all duration-500 font-medium"
             >
-              Agendar Consulta
+              Agendar Conversa
             </a>
           </nav>
 
           {/* Mobile Menu Trigger */}
           <button
             id="mobile-menu-trigger"
-            className="lg:hidden text-white flex items-center gap-2 group"
+            className="lg:hidden text-white flex items-center gap-2 group p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <span className="text-[10px] uppercase tracking-[0.3em] font-light opacity-60 group-hover:opacity-100 transition-opacity hidden sm:block">Menu</span>
-            <div className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full bg-white/5 backdrop-blur-sm group-hover:border-white/30 transition-all">
+            <div className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full bg-white/5 backdrop-blur-sm transition-all">
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </div>
           </button>
         </div>
       </header>
 
-      {/* Full Content Grid */}
-      <div className="relative z-20 flex-grow flex items-center pt-24 lg:pt-0">
-        <div className="max-w-[1440px] mx-auto w-full px-6 sm:px-10 lg:px-20 grid grid-cols-12">
-          <div className="col-span-12 flex flex-col items-start text-left">
+      {/* Full Content Grid - Aligned to Bottom on Mobile, Centered on Desktop */}
+      <div className="relative z-20 flex-grow flex flex-col justify-end lg:justify-center pb-0 lg:pb-0">
+        <div className="max-w-[1440px] mx-auto w-full px-6 sm:px-10 lg:px-20 grid grid-cols-12 min-w-0">
+          <div className="col-span-12 flex flex-col items-start text-left min-w-0">
             <motion.div
               custom={0}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="flex items-center gap-4 mb-6 sm:mb-8"
+              className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-8"
             >
               <div className="w-8 h-[1px] bg-metallic/40" />
-              <span className="text-[9px] sm:text-[10px] lg:text-[11px] uppercase tracking-[0.4em] text-metallic font-light">
+              <span className="text-[9px] sm:text-[11px] lg:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-metallic font-medium">
                 Direito de Família e Sucessões
               </span>
             </motion.div>
@@ -142,10 +147,10 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="font-serif text-white text-[clamp(34px,8vw,72px)] leading-[1.1] sm:leading-[1.05] font-light max-w-4xl tracking-tight mb-8 sm:mb-10"
+              className="font-serif text-white text-[clamp(28px,8vw,72px)] leading-[1.1] sm:leading-[1.05] font-light max-w-full tracking-tight mb-4 sm:mb-10 break-words"
             >
-              Seu problema familiar <br className="hidden sm:block" />
-              não precisa se tornar <br className="hidden sm:block" />
+              Seu problema familiar <br className="hidden xs:block" />
+              não precisa se tornar <br className="hidden xs:block" />
               <span className="italic font-extralight text-white/90">um desgaste maior.</span>
             </motion.h1>
 
@@ -154,7 +159,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="text-white/60 text-sm sm:text-base lg:text-[18px] max-w-xl font-light leading-relaxed mb-10 sm:mb-12"
+              className="text-white/80 text-base sm:text-lg lg:text-[20px] max-w-full sm:max-w-xl font-normal leading-relaxed mb-4 sm:mb-12 break-words"
             >
               Divórcios, inventários e conflitos conduzidos com estratégia, clareza e sensibilidade jurídica.
             </motion.p>
@@ -164,54 +169,74 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-stretch sm:items-center w-full sm:w-auto"
+              className="flex flex-row items-center gap-3 sm:gap-6 w-full sm:w-auto mb-4 sm:mb-12 lg:mb-0"
             >
               <a 
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-deep-navy px-8 sm:px-12 py-5 text-[11px] uppercase tracking-[0.2em] font-semibold transition-all duration-300 hover:bg-metallic text-center"
+                className="w-full sm:w-auto bg-white text-deep-navy px-6 sm:px-12 py-4 text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold transition-all duration-300 hover:bg-metallic text-center shadow-xl flex items-center justify-center gap-3"
               >
-                Agendar Consulta
+                Agendar Conversa
               </a>
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const el = document.getElementById('atuacao');
-                  if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
-                }}
-                className="group flex items-center justify-center sm:justify-start space-x-3 text-white/80 hover:text-white transition-colors py-3"
-              >
-                <span className="text-[11px] uppercase tracking-[0.2em] border-b border-white/20 group-hover:border-white transition-all">
-                  Conhecer atuação
-                </span>
-              </button>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Footer Indicators - Refined for mobile/tablet */}
-      <div className="relative z-20 w-full mt-auto py-8 lg:py-10 px-6 sm:px-10 lg:px-20 border-t border-white/5 bg-black/10 backdrop-blur-[2px]">
-        <div className="max-w-[1440px] mx-auto flex flex-wrap items-center justify-center lg:justify-between gap-y-4 gap-x-8 sm:gap-x-12">
-          {[
-            'Atendimento direto',
-            'Online em todo Brasil',
-            'Solução inteligente',
-          ].map((text, i) => (
-            <motion.div
-              key={text}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 + i * 0.1 }}
-              className="flex items-center gap-4 sm:gap-8 group"
+      {/* Footer Indicators - Horizontal Carousel for Mobile/Tablet, Static for Desktop */}
+      <div className="relative z-20 w-full mt-auto py-8 lg:py-10 border-t border-white/5 bg-black/10 backdrop-blur-[2px] overflow-hidden">
+        <div className="max-w-[1440px] mx-auto">
+          {/* Mobile/Tablet Carousel */}
+          <div className="lg:hidden">
+            <motion.div 
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ 
+                duration: 20, 
+                ease: "linear", 
+                repeat: Infinity 
+              }}
+              className="flex whitespace-nowrap gap-12 items-center w-max px-6"
             >
-              <span className="text-[9px] sm:text-[10px] lg:text-[11px] uppercase tracking-[0.3em] text-white/40 font-light group-hover:text-white/60 transition-colors">
-                {text}
-              </span>
-              {i < 2 && <div className="hidden lg:block h-[1px] w-12 bg-white/10" />}
+              {[
+                'Atendimento direto',
+                'Online em todo Brasil',
+                'Solução inteligente',
+                'Atendimento direto',
+                'Online em todo Brasil',
+                'Solução inteligente',
+              ].map((text, i) => (
+                <div key={`${text}-${i}`} className="flex items-center gap-12">
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-white/60 font-medium whitespace-nowrap">
+                    {text}
+                  </span>
+                  <div className="h-[1px] w-8 bg-white/10" />
+                </div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* Desktop Static View */}
+          <div className="hidden lg:flex items-center justify-between px-20">
+            {[
+              'Atendimento direto',
+              'Online em todo Brasil',
+              'Solução inteligente',
+            ].map((text, i) => (
+              <motion.div
+                key={text}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 + i * 0.1 }}
+                className="flex items-center gap-8 group"
+              >
+                <span className="text-sm uppercase tracking-[0.3em] text-white/60 font-medium group-hover:text-white transition-colors text-shadow-sm">
+                  {text}
+                </span>
+                {i < 2 && <div className="h-[1px] w-12 bg-white/10" />}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -223,11 +248,11 @@ export default function Hero() {
         className="fixed inset-0 z-[60] bg-deep-navy/98 backdrop-blur-2xl flex flex-col lg:hidden"
       >
         <div className="flex items-center justify-between p-6 sm:p-10 border-b border-white/5">
-          <div className="flex flex-col">
-            <span className="font-serif text-white text-base tracking-widest font-light">
+          <div className="flex flex-col max-w-[200px]">
+            <span className="font-serif text-white text-base tracking-widest font-light break-words leading-tight">
               PÂMELA REGINA
             </span>
-            <span className="text-metallic text-[8px] tracking-[0.3em] uppercase font-light">
+            <span className="text-metallic text-[8px] tracking-[0.2em] sm:tracking-[0.3em] uppercase font-light break-words">
               Advocacia Familiar
             </span>
           </div>
@@ -239,7 +264,7 @@ export default function Hero() {
           </button>
         </div>
 
-        <div className="flex-grow flex flex-col items-center justify-center p-6 space-y-8">
+        <div className="flex-grow flex flex-col items-center justify-center p-6 space-y-6 sm:space-y-8 overflow-y-auto">
           {navItems.map((item, i) => (
             <motion.a
               key={item.name}
@@ -251,7 +276,7 @@ export default function Hero() {
                 setIsMobileMenuOpen(false);
                 handleNavClick(e, item.href);
               }}
-              className="text-xl sm:text-2xl font-serif text-white tracking-[0.2em] uppercase hover:text-metallic transition-colors text-center w-full py-2"
+              className="text-lg sm:text-2xl font-serif text-white tracking-[0.2em] uppercase hover:text-metallic transition-colors text-center w-full py-2 break-words"
             >
               {item.name}
             </motion.a>

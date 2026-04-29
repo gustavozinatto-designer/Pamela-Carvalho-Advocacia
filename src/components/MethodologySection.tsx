@@ -37,7 +37,7 @@ export default function MethodologySection() {
   };
 
   return (
-    <section className="relative py-20 lg:py-24 bg-[#050B13] overflow-hidden border-t border-white/5">
+    <section className="relative py-20 sm:py-24 lg:py-32 bg-[#050B13] overflow-hidden border-t border-white/5">
       {/* Background Image - Subtle Texture */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] grayscale">
         <img 
@@ -47,36 +47,36 @@ export default function MethodologySection() {
         />
       </div>
 
-      {/* Background Texture/Glow */}
-      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-petroleum/10 blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
+      {/* Background Decoration */}
+      <div className="absolute top-0 left-1/4 w-[min(800px,100vw)] h-[min(800px,100vw)] bg-petroleum/10 blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
       
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10 w-full">
         
-        {/* Header Section - Refined Proportions */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 mb-12 lg:mb-16">
-          <div className="col-span-12 lg:col-span-7">
+        {/* Header Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 mb-14 lg:mb-20">
+          <div className="col-span-12 lg:col-span-7 min-w-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex items-center gap-4 mb-6"
+              className="flex items-center gap-4 mb-4 sm:mb-6"
             >
-              <div className="w-8 h-[1px] bg-white/20" />
-              <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.4em] text-white/40 font-light font-sans">
+              <div className="w-8 h-[1px] bg-white/20 shrink-0" />
+              <span className="text-[10px] sm:text-[11px] lg:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-white/60 font-medium font-sans">
                 METODOLOGIA
               </span>
             </motion.div>
-
+ 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-white text-[clamp(21px,5vw,64px)] leading-[1.2] sm:leading-[1.05] font-light tracking-tight break-words"
+              className="font-serif text-white text-[clamp(24px,8vw,64px)] leading-[1.1] sm:leading-[1.05] font-normal tracking-tight break-words max-w-full"
             >
-              Atendimento próximo, <br className="hidden sm:block" />
-              <span className="italic text-white/40">estratégia definida</span> e <br className="hidden sm:block" />
+              Atendimento próximo, <br className="hidden xs:block" />
+              <span className="italic text-white/40">estratégia definida</span> e <br className="hidden xs:block" />
               condução segura.
             </motion.h2>
           </div>
@@ -86,17 +86,17 @@ export default function MethodologySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="col-span-12 lg:col-span-5 lg:pt-16"
+            className="col-span-12 lg:col-span-5 lg:pt-16 min-w-0"
           >
-            <p className="text-white/50 text-base lg:text-[18px] font-light leading-relaxed max-w-xl mb-8">
+            <p className="text-white/70 text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed max-w-full sm:max-w-xl mb-6 sm:mb-8 break-words">
               Cada caso exige atenção real, leitura técnica e decisões bem direcionadas. Por isso, o atendimento é individual, direto e estruturado para oferecer clareza desde o primeiro contato.
             </p>
 
             <button
               onClick={handleConsult}
-              className="group relative flex items-center gap-2 py-2"
+              className="group relative flex items-center gap-3 py-2 w-auto"
             >
-              <span className="text-[11px] uppercase tracking-[0.5em] text-white/50 group-hover:text-white transition-colors duration-500 font-medium font-sans">
+              <span className="text-[11px] uppercase tracking-[0.4em] sm:tracking-[0.5em] text-white/70 group-hover:text-white transition-colors duration-500 font-bold font-sans">
                 Agendar consulta
               </span>
               <ArrowUpRight size={14} className="text-white/30 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-500" />
@@ -105,15 +105,9 @@ export default function MethodologySection() {
           </motion.div>
         </div>
 
-        {/* Pillars Grid - Full Grid Style */}
-        <div className="relative">
-          {/* Decorative Grid Lines - Full 2x2 Grid */}
-          <div className="absolute inset-0 border-t border-white/5 pointer-events-none hidden lg:block" />
-          <div className="absolute inset-x-0 top-1/2 border-t border-white/5 pointer-events-none hidden lg:block" />
-          <div className="absolute inset-y-0 left-1/2 border-l border-white/5 pointer-events-none hidden lg:block" />
-          <div className="absolute inset-0 border-b border-white/5 pointer-events-none hidden lg:block" />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
+        {/* Pillars Grid */}
+        <div className="relative border-t border-white/5 lg:border-none">
+          <div className="grid grid-cols-1 sm:grid-cols-2">
             {pillars.map((pillar, index) => (
               <motion.div
                 key={index}
@@ -121,26 +115,27 @@ export default function MethodologySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`group relative p-8 sm:p-10 lg:p-12 border-b lg:border-none border-white/5 
-                  ${index % 2 === 0 ? 'sm:border-r sm:border-white/5' : ''}
-                  ${index < 2 ? 'sm:border-b sm:border-white/5' : ''}
+                className={`group relative p-6 xs:p-8 sm:p-10 lg:p-12 border-b border-white/5 min-w-0
+                  ${index % 2 === 0 ? 'sm:border-r' : ''}
+                  ${index >= pillars.length - 2 && index % 2 === 0 ? 'lg:border-b-0' : ''}
+                  ${index >= pillars.length - 1 ? 'sm:border-b-0' : ''}
                 `}
               >
                 {/* Background Number */}
-                <span className="absolute top-8 right-8 text-7xl lg:text-8xl font-serif text-white/[0.02] group-hover:text-white/[0.04] transition-colors duration-700 font-bold select-none pointer-events-none">
+                <span className="absolute top-6 right-6 sm:top-8 sm:right-8 text-6xl sm:text-7xl lg:text-8xl font-serif text-white/[0.02] group-hover:text-white/[0.04] transition-colors duration-700 font-bold select-none pointer-events-none">
                   {pillar.number}
                 </span>
 
-                <div className="relative z-10 w-full">
-                  <div className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 rounded-full mb-8 group-hover:border-white/30 transition-all duration-500">
-                    <pillar.icon size={18} strokeWidth={1.2} className="text-white/60 group-hover:text-white transition-colors" />
+                <div className="relative z-10 w-full min-w-0">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white/5 border border-white/10 rounded-full mb-6 sm:mb-8 group-hover:border-white/30 transition-all duration-500">
+                    <pillar.icon size={16} sm:size={18} strokeWidth={1.2} className="text-white/60 group-hover:text-white transition-colors" />
                   </div>
 
-                  <h3 className="font-serif text-white text-xl lg:text-[24px] font-light leading-tight tracking-tight mb-4 break-words">
+                  <h3 className="font-serif text-white text-lg sm:text-xl lg:text-[24px] font-normal leading-tight tracking-tight mb-3 sm:mb-4 break-words">
                     {pillar.title}
                   </h3>
                   
-                  <p className="text-white/40 text-sm lg:text-[16px] leading-relaxed font-light max-w-sm break-words">
+                  <p className="text-white/60 text-xs sm:text-sm lg:text-[16px] leading-relaxed font-normal max-w-full sm:max-w-[280px] md:max-w-xs break-words">
                     {pillar.description}
                   </p>
                 </div>

@@ -80,18 +80,18 @@ export default function AreasSection() {
   return (
     <section 
       id="atuacao"
-      className="py-20 sm:py-24 lg:py-32 overflow-hidden relative"
+      className="py-20 sm:py-24 lg:py-32 relative overflow-hidden w-full max-w-full"
       style={{ background: 'linear-gradient(180deg, #0C1724 0%, #08111B 100%)' }}
     >
       {/* Subtle Glows */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-petroleum/10 blur-[130px] rounded-full -translate-y-1/2 translate-x-1/2 select-none pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-petroleum/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 select-none pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[min(600px,100vw)] h-[min(600px,100vw)] bg-petroleum/10 blur-[130px] rounded-full -translate-y-1/2 translate-x-1/2 select-none pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[min(600px,100vw)] h-[min(600px,100vw)] bg-petroleum/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 select-none pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 xs:px-8 sm:px-10 lg:px-20 relative z-10 w-full overflow-hidden">
         
-        {/* Editorial Header Section */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-12 mb-16 lg:mb-24">
-          <div className="max-w-2xl">
+        {/* Header Section */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-12 mb-16 lg:mb-24 w-full">
+          <div className="w-full max-w-full lg:max-w-2xl min-w-0 overflow-hidden">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -99,8 +99,8 @@ export default function AreasSection() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-4 mb-6"
             >
-              <div className="w-8 h-[1px] bg-white/20" />
-              <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.4em] text-white/40 font-light font-sans">
+              <div className="w-8 h-[1px] bg-white/20 shrink-0" />
+              <span className="text-[11px] lg:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-white/60 font-medium font-sans">
                 ATUAÇÃO
               </span>
             </motion.div>
@@ -110,9 +110,9 @@ export default function AreasSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-white text-[clamp(36px,5.5vw,82px)] leading-[1.05] font-light tracking-tight"
+              className="font-serif text-white text-[clamp(24px,8vw,82px)] leading-[1.1] sm:leading-[1.05] font-normal tracking-tight break-words w-full"
             >
-              O que posso resolver <br className="hidden sm:block" />
+              O que posso resolver <br className="hidden xs:block" />
               <span className="italic text-white/30">para você</span>
             </motion.h2>
           </div>
@@ -122,30 +122,29 @@ export default function AreasSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:max-w-xs xl:max-w-sm"
+            className="w-full lg:max-w-xs xl:max-w-sm min-w-0"
           >
-            <p className="text-white/50 text-base lg:text-[17px] font-light leading-relaxed border-l border-white/10 pl-6">
+            <p className="text-white/70 text-base lg:text-[17px] font-normal leading-relaxed border-l border-white/20 pl-6 break-words w-full">
               Atuação especializada nas demandas que mais impactam famílias e patrimônio — com foco prioritário em inventários e divórcios.
             </p>
           </motion.div>
         </div>
 
-        {/* Grid of Cards - Dark Editorial Theme */}
+        {/* Card Grid */}
         <motion.div 
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full"
         >
           {areas.map((area, index) => (
             <motion.div
               key={index}
               variants={item}
-              className="group relative bg-[#091018] border border-white/5 p-8 sm:p-10 lg:p-12 rounded-[4px] transition-all duration-700 hover:bg-[#0E1721] hover:border-white/10 flex flex-col h-full"
+              className="group relative bg-[#091018] border border-white/5 p-6 sm:p-10 lg:p-12 rounded-[4px] transition-all duration-700 hover:bg-[#0E1721] hover:border-white/10 flex flex-col h-full min-w-0 overflow-hidden"
             >
-              {/* Card Top: Icon and Subtle Number */}
-              <div className="flex justify-between items-center mb-8 sm:mb-12">
+              <div className="flex justify-between items-center mb-10 sm:mb-12">
                 <div className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 rounded-[8px] transition-all duration-500 group-hover:scale-110 group-hover:border-white/20">
                   <area.icon size={22} strokeWidth={1} className="text-white/60 group-hover:text-white transition-colors" />
                 </div>
@@ -154,21 +153,21 @@ export default function AreasSection() {
                 </span>
               </div>
               
-              <h3 className="font-serif text-white text-2xl lg:text-[28px] font-light leading-tight tracking-tight mb-6">
+              <h3 className="font-serif text-white text-xl xs:text-2xl lg:text-[28px] font-normal leading-tight tracking-tight mb-6 break-words">
                 {area.title}
               </h3>
               
-              <p className="text-white/40 text-sm sm:text-base leading-relaxed font-light mb-auto">
+              <p className="text-white/60 text-sm sm:text-base leading-relaxed font-normal mb-auto break-words">
                 {area.description}
               </p>
               
               <div className="mt-10 sm:mt-12 pt-8 border-t border-white/5">
                 <button 
                   onClick={() => handleConsult(area.message)}
-                  className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/30 hover:text-white transition-all duration-500 group/btn font-sans"
+                  className="flex items-center gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-white/60 hover:text-white transition-all duration-500 group/btn font-sans font-medium w-full sm:w-auto"
                 >
                   Consultar Especialista
-                  <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover/btn:opacity-100 group-hover/btn:translate-y-0 group-hover/btn:translate-x-0 transition-all duration-500" />
+                  <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover/btn:opacity-100 group-hover/btn:translate-y-0 group-hover/btn:translate-x-0 transition-all duration-500 shrink-0" />
                 </button>
               </div>
             </motion.div>

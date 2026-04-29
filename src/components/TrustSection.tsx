@@ -53,7 +53,7 @@ export default function TrustSection() {
       {/* Subtle Top Gradient */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-deep-navy/5 to-transparent pointer-events-none" />
       
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 w-full">
         {/* Intro Text Block */}
         <div className="mb-12 sm:mb-16 lg:mb-20">
           <motion.div
@@ -63,22 +63,22 @@ export default function TrustSection() {
             transition={{ duration: 0.8 }}
             className="flex items-center gap-4 mb-6"
           >
-            <div className="w-8 h-[1px] bg-refined-gray/20" />
-            <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.4em] text-refined-gray font-light">
+            <div className="w-8 h-[1px] bg-refined-gray/20 shrink-0" />
+            <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-refined-gray font-light">
               ATENDIMENTO
             </span>
           </motion.div>
           
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 min-w-0">
+            <div className="col-span-12 md:col-span-10 lg:col-span-9 min-w-0">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="font-serif text-petroleum text-[clamp(32px,5vw,56px)] leading-[1.1] font-light tracking-tight mb-8"
+                className="font-serif text-petroleum text-[clamp(24px,7vw,56px)] leading-[1.1] font-normal tracking-tight mb-8 break-words max-w-full"
               >
-                Segurança jurídica <br className="hidden sm:block" />
+                Segurança jurídica <br className="hidden xs:block" />
                 com atendimento próximo.
               </motion.h2>
               
@@ -87,7 +87,7 @@ export default function TrustSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-refined-gray text-base lg:text-[18px] max-w-2xl font-light leading-relaxed opacity-80"
+                className="text-refined-gray text-base lg:text-[18px] max-w-2xl font-normal leading-relaxed opacity-90 break-words"
               >
                 Uma advocacia especializada para conduzir momentos delicados com clareza, estratégia e atenção real ao seu caso.
               </motion.p>
@@ -106,10 +106,9 @@ export default function TrustSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group flex flex-col items-start"
+              className="group flex flex-col items-start min-w-0"
             >
-              <div className="mb-6 sm:mb-8 relative">
-                {/* Minimalist Icon Container */}
+              <div className="mb-6 sm:mb-8 relative shrink-0">
                 <div className="w-12 h-12 flex items-center justify-center border border-petroleum/10 rounded-full transition-all duration-500 group-hover:border-petroleum group-hover:shadow-[0_0_20px_rgba(14,33,53,0.05)] bg-white/50 backdrop-blur-sm">
                   <item.icon 
                     size={20} 
@@ -117,17 +116,15 @@ export default function TrustSection() {
                     className="text-petroleum/80 transition-transform duration-500 group-hover:scale-110" 
                   />
                 </div>
-                {/* Corner detail - subtle boutique touch */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-petroleum/5 rounded-full scale-0 transition-transform duration-500 group-hover:scale-100" />
               </div>
 
-              <h3 className="font-serif text-petroleum text-xl lg:text-2xl mb-4 leading-tight tracking-tight font-light">
+              <h3 className="font-serif text-petroleum text-xl lg:text-2xl mb-4 leading-tight tracking-tight font-light break-words w-full">
                 {item.title}
               </h3>
 
-              <div className="h-[1px] w-8 bg-petroleum/10 mb-5 transition-all duration-500 group-hover:w-16 group-hover:bg-petroleum/20" />
+              <div className="h-[1px] w-8 bg-petroleum/10 mb-5 transition-all duration-500 group-hover:w-16 group-hover:bg-petroleum/20 shrink-0" />
 
-              <p className="text-refined-gray text-sm sm:text-base leading-relaxed font-light opacity-90">
+              <p className="text-refined-gray text-sm sm:text-base leading-relaxed font-light opacity-90 break-words w-full">
                 {item.description}
               </p>
             </motion.div>

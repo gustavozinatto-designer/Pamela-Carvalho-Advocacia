@@ -40,8 +40,8 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="depoimentos" className="relative py-20 sm:py-24 lg:py-32 bg-[#050B13] overflow-hidden flex items-center justify-center min-h-[500px] border-t border-white/5">
-      {/* Background Image - Subtle Texture related to Law */}
+    <section id="depoimentos" className="relative py-20 sm:py-24 lg:py-32 bg-[#050B13] overflow-hidden flex items-center justify-center min-h-[550px] sm:min-h-[500px] border-t border-white/5">
+      {/* Background Image - Subtle Texture */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.22] grayscale">
         <img 
           src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=2000" 
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Signature Petroleum Glow */}
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-petroleum/10 blur-[150px] rounded-full translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[min(600px,100vw)] h-[min(600px,100vw)] bg-petroleum/10 blur-[150px] rounded-full translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10 text-center flex flex-col items-center w-full">
         <motion.div
@@ -61,14 +61,14 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1 }}
           className="flex items-center gap-4 mb-6"
         >
-          <div className="w-8 h-[1px] bg-white/20" />
-          <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-white/40 font-bold">
+          <div className="w-8 h-[1px] bg-white/20 shrink-0" />
+          <span className="text-[10px] sm:text-[11px] lg:text-xs uppercase tracking-[0.4em] sm:tracking-[0.6em] text-white/60 font-bold">
             Depoimentos
           </span>
-          <div className="w-8 h-[1px] bg-white/20" />
+          <div className="w-8 h-[1px] bg-white/20 shrink-0" />
         </motion.div>
 
-        <div className="relative w-full min-h-[350px] sm:min-h-[300px] lg:min-h-[250px] flex items-center justify-center">
+        <div className="relative w-full min-h-[400px] sm:min-h-[300px] lg:min-h-[250px] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -76,20 +76,20 @@ export default function TestimonialsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.8, ease: [0.21, 0.45, 0.32, 0.9] }}
-              className="w-full flex flex-col items-center justify-center"
+              className="w-full flex flex-col items-center justify-center min-w-0"
             >
               <div className="max-w-5xl w-full">
-                <p className="text-white text-[clamp(20px,3vw,36px)] leading-[1.6] sm:leading-[1.5] font-serif italic tracking-tight mb-10 text-center px-4 sm:px-8">
+                <p className="text-white text-[clamp(20px,5vw,36px)] leading-[1.4] sm:leading-[1.5] font-serif italic tracking-tight mb-10 text-center px-4 sm:px-8 break-words">
                   “{testimonials[index].quote}”
                 </p>
               </div>
               
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-[1px] bg-white/30 mb-5" />
-                <span className="text-[12px] sm:text-[13px] lg:text-[14px] uppercase tracking-[0.3em] font-bold text-white mb-2">
+              <div className="flex flex-col items-center min-w-0">
+                <div className="w-12 h-[1px] bg-white/30 mb-5 shrink-0" />
+                <span className="text-[12px] sm:text-[13px] lg:text-[14px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold text-white mb-2 break-words">
                   {testimonials[index].author}
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/40">
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.1em] sm:tracking-[0.2em] font-medium text-white/60 break-words">
                   {testimonials[index].location}
                 </span>
               </div>
@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
               id={`testimonial-dot-${i}`}
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-[2px] transition-all duration-700 ease-out ${
+              className={`h-[2px] transition-all duration-700 ease-out cursor-pointer ${
                 index === i ? 'w-12 bg-white' : 'w-4 bg-white/20 hover:bg-white/40'
               }`}
             />
@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
         </div>
       </div>
 
-      {/* Side "Double Quote" background elements */}
+      {/* Side "Double Quote" decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[150px] sm:text-[300px] font-serif italic text-white/[0.02] pointer-events-none select-none z-0">
         “ ”
       </div>
