@@ -50,11 +50,11 @@ export default function MethodologySection() {
       {/* Background Decoration */}
       <div className="absolute top-0 left-1/4 w-[min(800px,100vw)] h-[min(800px,100vw)] bg-petroleum/10 blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
       
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 relative z-10 w-full">
         
         {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 mb-14 lg:mb-20">
-          <div className="col-span-12 lg:col-span-7 min-w-0">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-24 mb-14 lg:mb-20 w-full">
+          <div className="w-full lg:col-span-7 min-w-0 overflow-hidden">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -73,10 +73,10 @@ export default function MethodologySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-white text-[clamp(24px,8vw,64px)] leading-[1.1] sm:leading-[1.05] font-normal tracking-tight break-words max-w-full"
+              className="font-serif text-white text-[clamp(24px,8vw,64px)] leading-[1.1] sm:leading-[1.05] font-normal tracking-tight break-words w-full"
             >
-              Atendimento próximo, <br className="hidden xs:block" />
-              <span className="italic text-white/40">estratégia definida</span> e <br className="hidden xs:block" />
+              Atendimento próximo, <br className="hidden sm:block" />
+              <span className="italic text-white/40">estratégia definida</span> e <br className="hidden sm:block" />
               condução segura.
             </motion.h2>
           </div>
@@ -86,9 +86,9 @@ export default function MethodologySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="col-span-12 lg:col-span-5 lg:pt-16 min-w-0"
+            className="w-full lg:col-span-12 xl:col-span-5 lg:pt-16 min-w-0"
           >
-            <p className="text-white/70 text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed max-w-full sm:max-w-xl mb-6 sm:mb-8 break-words">
+            <p className="text-white/70 text-base sm:text-lg lg:text-[18px] font-normal leading-relaxed mb-6 sm:mb-8 break-words w-full">
               Cada caso exige atenção real, leitura técnica e decisões bem direcionadas. Por isso, o atendimento é individual, direto e estruturado para oferecer clareza desde o primeiro contato.
             </p>
 
@@ -115,7 +115,7 @@ export default function MethodologySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`group relative p-6 xs:p-8 sm:p-10 lg:p-12 border-b border-white/5 min-w-0
+                className={`group relative p-6 sm:p-10 lg:p-12 border-b border-white/5 min-w-0
                   ${index % 2 === 0 ? 'sm:border-r' : ''}
                   ${index >= pillars.length - 2 && index % 2 === 0 ? 'lg:border-b-0' : ''}
                   ${index >= pillars.length - 1 ? 'sm:border-b-0' : ''}

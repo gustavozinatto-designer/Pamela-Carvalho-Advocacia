@@ -71,7 +71,7 @@ export default function FinalCTASection() {
               className="group relative flex-1 sm:flex-none sm:min-w-[200px] bg-white text-black font-sans font-bold text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] py-4 px-4 sm:px-10 rounded-sm overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] text-center flex items-center justify-center"
             >
               <div className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
-                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" strokeWidth={1.5} />
+                <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:scale-110" strokeWidth={1.5} />
                 <span>WHATSAPP</span>
               </div>
             </a>

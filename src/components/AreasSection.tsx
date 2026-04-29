@@ -87,11 +87,11 @@ export default function AreasSection() {
       <div className="absolute top-0 right-0 w-[min(600px,100vw)] h-[min(600px,100vw)] bg-petroleum/10 blur-[130px] rounded-full -translate-y-1/2 translate-x-1/2 select-none pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[min(600px,100vw)] h-[min(600px,100vw)] bg-petroleum/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 select-none pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-6 xs:px-8 sm:px-10 lg:px-20 relative z-10 w-full overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 relative z-10 w-full">
         
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-12 mb-16 lg:mb-24 w-full">
-          <div className="w-full max-w-full lg:max-w-2xl min-w-0 overflow-hidden">
+          <div className="w-full max-w-full lg:max-w-2xl min-w-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -112,7 +112,7 @@ export default function AreasSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="font-serif text-white text-[clamp(24px,8vw,82px)] leading-[1.1] sm:leading-[1.05] font-normal tracking-tight break-words w-full"
             >
-              O que posso resolver <br className="hidden xs:block" />
+              O que posso resolver <br className="hidden sm:block" />
               <span className="italic text-white/30">para você</span>
             </motion.h2>
           </div>

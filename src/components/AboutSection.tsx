@@ -34,9 +34,9 @@ const fadeUp = {
 
 export default function AboutSection() {
   return (
-    <section id="sobre" className="relative py-20 sm:py-24 lg:py-32 bg-white overflow-hidden w-full max-w-full">
-      <div className="max-w-[1440px] mx-auto px-6 xs:px-8 sm:px-10 lg:px-20 w-full relative overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start w-full">
+    <section id="sobre" className="relative py-20 sm:py-24 lg:py-32 bg-white overflow-hidden w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 w-full relative">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-24 items-start w-full">
           
           {/* Image Column */}
           <motion.div 
@@ -44,9 +44,9 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.21, 0.45, 0.32, 0.9] }}
-            className="col-span-12 lg:col-span-12 xl:col-span-5 order-1 xl:sticky xl:top-32 flex justify-center w-full min-w-0"
+            className="w-full lg:col-span-5 xl:col-span-5 order-1 lg:sticky lg:top-32 flex justify-center min-w-0"
           >
-            <div className="relative w-full max-w-full sm:max-w-[480px] lg:max-w-[560px] xl:max-w-none px-1 sm:px-0">
+            <div className="relative w-full max-w-[480px] lg:max-w-none">
               {/* Main Image with Editorial Frame */}
               <div className="relative z-10 overflow-hidden rounded-[2px] shadow-2xl aspect-[4/5] sm:aspect-[3/4.5] xl:aspect-[3/5.2] w-full bg-ice-white">
                 <img 
@@ -56,7 +56,7 @@ export default function AboutSection() {
                    referrerPolicy="no-referrer"
                  />
                  
-                 {/* Image Caption - Adjusted for absolute precision and no overflow */}
+                 {/* Image Caption */}
                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-20">
                    <div className="bg-[#08111f]/60 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-4 rounded-[2px] border border-white/10">
                      <span className="block font-serif text-white text-sm sm:text-base lg:text-lg leading-tight tracking-[0.02em] break-words">Pâmela Regina S. Carvalho</span>
@@ -65,7 +65,7 @@ export default function AboutSection() {
                  </div>
                </div>
               
-              {/* Floating Badge (Subtle Label) - Responsive position */}
+              {/* Floating Badge */}
               <div className="absolute top-10 -right-2 sm:-right-4 lg:-right-8 hidden md:block z-20 bg-ice-white/90 backdrop-blur-md px-6 py-4 shadow-xl border border-petroleum/5">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-petroleum font-medium block mb-1">Inscrita na OAB</span>
                 <span className="text-xs font-serif italic text-petroleum opacity-70">Atuação Especializada</span>
@@ -74,8 +74,8 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Content Column */}
-          <div className="col-span-12 lg:col-span-12 xl:col-span-7 order-2 space-y-10 sm:space-y-14 min-w-0 w-full overflow-hidden">
-            <div className="space-y-8 sm:space-y-10 w-full max-w-full">
+          <div className="w-full lg:col-span-7 xl:col-span-7 order-2 space-y-10 sm:space-y-14 min-w-0">
+            <div className="space-y-8 sm:space-y-10 w-full">
               <motion.div
                 custom={0}
                 initial="hidden"
@@ -96,7 +96,7 @@ export default function AboutSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="font-serif text-petroleum text-[clamp(24px,7vw,48px)] leading-[1.2] font-normal tracking-tight break-words w-full"
+                className="font-serif text-petroleum text-[clamp(22px,7vw,48px)] leading-[1.2] font-normal tracking-tight break-words w-full"
               >
                 Uma advocacia feita para pessoas, não para processos
               </motion.h2>
@@ -136,10 +136,10 @@ export default function AboutSection() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="group flex flex-row items-start gap-4 sm:gap-6 w-full min-w-0"
+                  className="group flex flex-row items-start gap-4 sm:gap-6 w-full"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-petroleum/10 rounded-full transition-all duration-500 group-hover:border-petroleum group-hover:shadow-[0_0_20px_rgba(14,33,53,0.05)] bg-ice-white/30 backdrop-blur-sm">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-petroleum/10 rounded-full transition-all duration-500 group-hover:border-petroleum bg-ice-white/30 backdrop-blur-sm">
                       <block.icon 
                         size={18} 
                         strokeWidth={1.2} 
@@ -148,11 +148,11 @@ export default function AboutSection() {
                     </div>
                   </div>
                   
-                  <div className="space-y-1 sm:space-y-2 min-w-0 flex-1 overflow-hidden">
+                  <div className="space-y-1 sm:space-y-2 min-w-0 flex-1">
                     <h4 className="font-serif text-petroleum text-lg sm:text-xl lg:text-2xl font-normal tracking-tight break-words">
                       {block.title}
                     </h4>
-                    <p className="text-refined-gray text-sm sm:text-base leading-relaxed font-normal opacity-70 max-w-xl break-words">
+                    <p className="text-refined-gray text-sm sm:text-base leading-relaxed font-normal opacity-70 break-words">
                       {block.description}
                     </p>
                   </div>
@@ -163,5 +163,6 @@ export default function AboutSection() {
         </div>
       </div>
     </section>
+
   );
 }

@@ -38,13 +38,13 @@ export default function SocialProofSection() {
 
   return (
     <section className="relative py-20 sm:py-24 lg:py-40 bg-white overflow-hidden w-full max-w-full">
-      <div className="max-w-[1440px] mx-auto px-6 xs:px-8 sm:px-10 lg:px-20 relative z-10 font-sans w-full overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 relative z-10 font-sans w-full">
         
         {/* Layout: Left Header, Right List */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start w-full">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start w-full">
           
           {/* Left Column */}
-          <div className="w-full max-w-full lg:max-w-xl min-w-0 overflow-hidden">
+          <div className="w-full max-w-full lg:max-w-xl min-w-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -65,7 +65,7 @@ export default function SocialProofSection() {
               transition={{ duration: 0.8 }}
               className="font-serif text-[#1C1C1C] text-[clamp(24px,8vw,82px)] leading-[1.05] tracking-tight mb-10 break-words w-full"
             >
-              Por que trabalhar <br className="hidden xs:block" />
+              Por que trabalhar <br className="hidden sm:block" />
               <span className="text-[#1C1C1C]/40">comigo</span>
             </motion.h2>
 

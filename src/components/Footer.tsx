@@ -25,13 +25,14 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="mb-8"
             >
-              <h2 className="font-serif text-[24px] xs:text-[28px] lg:text-[32px] tracking-tight italic mb-2 break-words">
-                Pâmela Regina Carvalho
-              </h2>
-              <p className="font-sans text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-white/40 mb-8 break-words">
-                Advocacia Familiar
-              </p>
+              <img 
+                src="https://i.postimg.cc/26wdcvFh/Ativo-1Logo.png" 
+                alt="Logo Pâmela Regina Carvalho" 
+                className="h-12 lg:h-16 w-auto object-contain mb-8"
+                referrerPolicy="no-referrer"
+              />
               <p className="text-white/50 font-light text-base lg:text-[16px] leading-relaxed max-w-sm break-words">
                 Atendimento jurídico estratégico em Direito de Família e Sucessões, com atuação humana, técnica e personalizada.
               </p>

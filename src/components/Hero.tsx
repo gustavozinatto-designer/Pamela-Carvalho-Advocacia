@@ -79,13 +79,18 @@ export default function Hero() {
         }`}
       >
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-20 w-full relative">
-          <div className="flex flex-col group cursor-pointer max-w-[180px] xs:max-w-[240px] sm:max-w-none min-w-0">
-            <span className="font-serif text-white text-[13px] xs:text-base sm:text-lg lg:text-xl tracking-[0.05em] sm:tracking-[0.12em] font-medium transition-colors hover:text-metallic break-words leading-tight">
-              PÂMELA REGINA CARVALHO
-            </span>
-            <span className="text-metallic text-[8px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.25em] uppercase mt-0.5 sm:mt-1 font-medium opacity-90 break-words">
-              Advocacia Familiar
-            </span>
+          <div 
+            className="flex items-center cursor-pointer min-w-0"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <img 
+              src="https://i.postimg.cc/26wdcvFh/Ativo-1Logo.png" 
+              alt="Logo Pâmela Regina Carvalho" 
+              className={`w-auto object-contain transition-all duration-500 ${
+                isScrolled ? 'h-6 sm:h-8 lg:h-9' : 'h-8 sm:h-12 lg:h-[52px] xl:h-[56px] max-w-[200px] sm:max-w-[260px] lg:max-w-[300px]'
+              }`}
+              referrerPolicy="no-referrer"
+            />
           </div>
 
           {/* Desktop Menu */}
@@ -149,8 +154,8 @@ export default function Hero() {
               variants={fadeUp}
               className="font-serif text-white text-[clamp(28px,8vw,72px)] leading-[1.1] sm:leading-[1.05] font-light max-w-full tracking-tight mb-4 sm:mb-10 break-words"
             >
-              Seu problema familiar <br className="hidden xs:block" />
-              não precisa se tornar <br className="hidden xs:block" />
+              Seu problema familiar <br className="hidden sm:block" />
+              não precisa se tornar <br className="hidden sm:block" />
               <span className="italic font-extralight text-white/90">um desgaste maior.</span>
             </motion.h1>
 
@@ -248,13 +253,13 @@ export default function Hero() {
         className="fixed inset-0 z-[60] bg-deep-navy/98 backdrop-blur-2xl flex flex-col lg:hidden"
       >
         <div className="flex items-center justify-between p-6 sm:p-10 border-b border-white/5">
-          <div className="flex flex-col max-w-[200px]">
-            <span className="font-serif text-white text-base tracking-widest font-light break-words leading-tight">
-              PÂMELA REGINA
-            </span>
-            <span className="text-metallic text-[8px] tracking-[0.2em] sm:tracking-[0.3em] uppercase font-light break-words">
-              Advocacia Familiar
-            </span>
+          <div className="flex items-center">
+            <img 
+              src="https://i.postimg.cc/26wdcvFh/Ativo-1Logo.png" 
+              alt="Logo Pâmela Regina Carvalho" 
+              className="h-7 sm:h-9 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <button
             className="w-12 h-12 flex items-center justify-center border border-white/10 rounded-full bg-white/5"
