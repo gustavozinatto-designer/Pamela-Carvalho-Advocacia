@@ -5,6 +5,8 @@
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
+  --breakpoint-xs: 380px;
+
   --color-deep-navy: #08111F;
   --color-petroleum: #0E2135;
   --color-refined-gray: #5D6B7A;

@@ -12,14 +12,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#050B13] text-white overflow-hidden pt-24 pb-8 border-t border-white/5">
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-20">
+    <footer className="bg-[#050B13] text-white overflow-hidden py-16 sm:py-20 lg:pt-24 lg:pb-8 border-t border-white/5">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20">
         
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16 lg:mb-24">
           
           {/* Column 1 - Brand & Philosophy */}
-          <div className="lg:col-span-5 pr-0 lg:pr-24">
+          <div className="lg:col-span-5 lg:pr-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function Footer() {
               <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">
                 Advocacia Familiar
               </p>
-              <p className="text-white/50 font-light text-[15px] lg:text-[16px] leading-relaxed max-w-sm">
+              <p className="text-white/50 font-light text-base lg:text-[16px] leading-relaxed max-w-sm">
                 Atendimento jurídico estratégico em Direito de Família e Sucessões, com atuação humana, técnica e personalizada.
               </p>
             </motion.div>
@@ -46,7 +46,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <h3 className="font-sans text-[11px] uppercase tracking-[0.3em] font-bold text-white/80 mb-8">
+              <h3 className="font-sans text-[11px] uppercase tracking-[0.3em] font-bold text-white/80 mb-6 sm:mb-8">
                 Navegação
               </h3>
               <ul className="space-y-4">
@@ -61,7 +61,7 @@ export default function Footer() {
                   <li key={item.name}>
                     <button 
                       onClick={() => handleScroll(item.id)}
-                      className="text-white/40 hover:text-white transition-colors duration-300 font-sans text-sm tracking-wide"
+                      className="text-white/40 hover:text-white transition-colors duration-300 font-sans text-sm sm:text-base tracking-wide"
                     >
                       {item.name}
                     </button>
@@ -79,7 +79,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="font-sans text-[11px] uppercase tracking-[0.3em] font-bold text-white/80 mb-8">
+              <h3 className="font-sans text-[11px] uppercase tracking-[0.3em] font-bold text-white/80 mb-6 sm:mb-8">
                 Contato
               </h3>
               <ul className="space-y-4">
@@ -88,10 +88,10 @@ export default function Footer() {
                     href="https://wa.me/5517988045527?text=Olá Dra. Pâmela, encontrei seu contato pelo rodapé e gostaria de agendar uma consulta." 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300 font-sans text-[15px]"
+                    className="flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300 font-sans text-base sm:text-lg"
                   >
                     <MessageCircle size={18} />
-                    WhatsApp
+                    WhatsApp Business
                   </a>
                 </li>
                 <li>
@@ -99,7 +99,7 @@ export default function Footer() {
                     href="https://www.instagram.com/dra.pamelareginas.carvalho/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300 font-sans text-[15px]"
+                    className="flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300 font-sans text-base sm:text-lg"
                   >
                     <Instagram size={18} />
                     Instagram
@@ -110,7 +110,7 @@ export default function Footer() {
                     href="https://www.linkedin.com/in/pamelarcarvalho-juridico-adm-direito/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300 font-sans text-[15px]"
+                    className="flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300 font-sans text-base sm:text-lg"
                   >
                     <Linkedin size={18} />
                     LinkedIn
@@ -123,14 +123,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-white/20 font-sans text-[10px] lg:text-[11px] tracking-wide text-center md:text-left"
+            className="text-white/20 font-sans text-[10px] lg:text-[11px] tracking-wide"
           >
-            © {currentYear} Pâmela Regina Carvalho. Todos os direitos reservados.
+            © {currentYear} Pâmela Regina Carvalho • OAB/SP 430.403 • Todos os direitos reservados.
           </motion.p>
           
           <motion.div 
@@ -139,7 +139,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2"
           >
-            <div className="w-6 h-[1px] bg-white/10" />
+            <div className="w-6 h-[1px] bg-white/10 hidden sm:block" />
             <a 
               href="https://www.instagram.com/gustavozinatto/"
               target="_blank"

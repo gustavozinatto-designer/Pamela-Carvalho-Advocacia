@@ -3,7 +3,7 @@ import { MessageCircle, Mail } from 'lucide-react';
 
 export default function FinalCTASection() {
   return (
-    <section id="contato" className="relative py-32 lg:py-48 overflow-hidden bg-[#050B13]">
+    <section id="contato" className="relative py-20 sm:py-24 lg:py-48 overflow-hidden bg-[#050B13]">
       {/* Background with sophisticated law office and petroleum overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -19,27 +19,31 @@ export default function FinalCTASection() {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-petroleum/10 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-petroleum/15 blur-[150px] rounded-full translate-y-1/2 pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           
-          <motion.span 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="block text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-white/40 font-bold mb-8"
+            className="flex items-center gap-4 mb-8 sm:mb-10"
           >
-            PRÓXIMO PASSO
-          </motion.span>
+            <div className="w-8 h-[1px] bg-white/10" />
+            <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-white/40 font-bold">
+              PRÓXIMO PASSO
+            </span>
+            <div className="w-8 h-[1px] bg-white/10" />
+          </motion.div>
 
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="font-serif text-white text-[clamp(36px,5vw,64px)] leading-[1.1] font-light italic mb-10 tracking-tight"
+            className="font-serif text-white text-[clamp(28px,5vw,64px)] leading-[1.1] font-light italic mb-10 tracking-tight break-words"
           >
-            Você não precisa <br className="hidden lg:block" /> resolver isso sozinho.
+            Você não precisa <br className="hidden sm:block" /> resolver isso sozinho.
           </motion.h2>
 
           <motion.p 
@@ -47,7 +51,7 @@ export default function FinalCTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-white/60 text-[16px] lg:text-[19px] leading-relaxed font-light max-w-2xl mb-16 lg:mb-20"
+            className="text-white/60 text-base sm:text-lg lg:text-[19px] leading-relaxed font-light max-w-2xl mb-12 sm:mb-20"
           >
             Uma conversa inicial já é suficiente para entender o que está em jogo e quais são os caminhos possíveis. Sem compromisso, sem jargão jurídico desnecessário.
           </motion.p>
@@ -58,13 +62,13 @@ export default function FinalCTASection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 w-full sm:w-auto"
           >
             <a 
               href="https://wa.me/5517988045527?text=Olá Dra. Pâmela, gostaria de agendar uma consulta para tratar do meu caso."
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full sm:w-auto min-w-[240px] bg-white text-black font-sans font-bold text-xs uppercase tracking-[0.2em] py-6 px-10 rounded-sm overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] text-center"
+              className="group relative w-full sm:w-auto min-w-[240px] bg-white text-black font-sans font-bold text-xs uppercase tracking-[0.2em] py-5 sm:py-6 px-10 rounded-sm overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] text-center"
             >
               <span className="relative z-10 flex items-center justify-center gap-3">
                 <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" strokeWidth={1.5} />
@@ -74,7 +78,7 @@ export default function FinalCTASection() {
 
             <a 
               href="mailto:contato@pamelacarvalho.adv.br"
-              className="w-full sm:w-auto min-w-[240px] border border-white/20 text-white font-sans font-bold text-xs uppercase tracking-[0.2em] py-6 px-10 rounded-sm transition-all duration-500 hover:bg-white/5 hover:border-white/40 flex items-center justify-center gap-3 text-center"
+              className="w-full sm:w-auto min-w-[240px] border border-white/20 text-white font-sans font-bold text-xs uppercase tracking-[0.2em] py-5 sm:py-6 px-10 rounded-sm transition-all duration-500 hover:bg-white/5 hover:border-white/40 flex items-center justify-center gap-3 text-center"
             >
               <Mail className="w-5 h-5 text-white/60" strokeWidth={1.5} />
               ENVIAR E-MAIL

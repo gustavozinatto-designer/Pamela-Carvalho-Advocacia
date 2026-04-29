@@ -80,17 +80,17 @@ export default function AreasSection() {
   return (
     <section 
       id="atuacao"
-      className="py-24 lg:py-32 overflow-hidden relative"
+      className="py-20 sm:py-24 lg:py-32 overflow-hidden relative"
       style={{ background: 'linear-gradient(180deg, #0C1724 0%, #08111B 100%)' }}
     >
       {/* Subtle Glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-petroleum/10 blur-[130px] rounded-full -translate-y-1/2 translate-x-1/2 select-none pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-petroleum/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 select-none pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
         
         {/* Editorial Header Section */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-24">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-12 mb-16 lg:mb-24">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -110,9 +110,9 @@ export default function AreasSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-white text-[clamp(40px,5.5vw,82px)] leading-[1.02] font-light tracking-tight"
+              className="font-serif text-white text-[clamp(36px,5.5vw,82px)] leading-[1.05] font-light tracking-tight"
             >
-              O que posso resolver <br />
+              O que posso resolver <br className="hidden sm:block" />
               <span className="italic text-white/30">para você</span>
             </motion.h2>
           </div>
@@ -136,16 +136,16 @@ export default function AreasSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {areas.map((area, index) => (
             <motion.div
               key={index}
               variants={item}
-              className="group relative bg-[#091018] border border-white/5 p-10 lg:p-12 rounded-[4px] transition-all duration-700 hover:bg-[#0E1721] hover:border-white/10 flex flex-col h-full"
+              className="group relative bg-[#091018] border border-white/5 p-8 sm:p-10 lg:p-12 rounded-[4px] transition-all duration-700 hover:bg-[#0E1721] hover:border-white/10 flex flex-col h-full"
             >
               {/* Card Top: Icon and Subtle Number */}
-              <div className="flex justify-between items-center mb-12">
+              <div className="flex justify-between items-center mb-8 sm:mb-12">
                 <div className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 rounded-[8px] transition-all duration-500 group-hover:scale-110 group-hover:border-white/20">
                   <area.icon size={22} strokeWidth={1} className="text-white/60 group-hover:text-white transition-colors" />
                 </div>
@@ -158,11 +158,11 @@ export default function AreasSection() {
                 {area.title}
               </h3>
               
-              <p className="text-white/40 text-sm lg:text-[15px] leading-relaxed font-light mb-auto">
+              <p className="text-white/40 text-sm sm:text-base leading-relaxed font-light mb-auto">
                 {area.description}
               </p>
               
-              <div className="mt-12 pt-8 border-t border-white/5">
+              <div className="mt-10 sm:mt-12 pt-8 border-t border-white/5">
                 <button 
                   onClick={() => handleConsult(area.message)}
                   className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/30 hover:text-white transition-all duration-500 group/btn font-sans"

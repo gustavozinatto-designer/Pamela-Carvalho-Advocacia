@@ -50,7 +50,7 @@ export default function MethodologySection() {
       {/* Background Texture/Glow */}
       <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-petroleum/10 blur-[150px] rounded-full -translate-y-1/2 pointer-events-none" />
       
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
         
         {/* Header Section - Refined Proportions */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 mb-12 lg:mb-16">
@@ -73,10 +73,10 @@ export default function MethodologySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-white text-[clamp(36px,4.5vw,64px)] leading-[1.05] font-light tracking-tight"
+              className="font-serif text-white text-[clamp(21px,5vw,64px)] leading-[1.2] sm:leading-[1.05] font-light tracking-tight break-words"
             >
-              Atendimento próximo, <br />
-              <span className="italic text-white/40">estratégia definida</span> e <br />
+              Atendimento próximo, <br className="hidden sm:block" />
+              <span className="italic text-white/40">estratégia definida</span> e <br className="hidden sm:block" />
               condução segura.
             </motion.h2>
           </div>
@@ -113,7 +113,7 @@ export default function MethodologySection() {
           <div className="absolute inset-y-0 left-1/2 border-l border-white/5 pointer-events-none hidden lg:block" />
           <div className="absolute inset-0 border-b border-white/5 pointer-events-none hidden lg:block" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
             {pillars.map((pillar, index) => (
               <motion.div
                 key={index}
@@ -121,8 +121,9 @@ export default function MethodologySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`group relative p-8 lg:p-12 border-b lg:border-none border-white/5 
-                  ${index % 2 === 0 ? 'lg:border-r lg:border-white/5' : ''}
+                className={`group relative p-8 sm:p-10 lg:p-12 border-b lg:border-none border-white/5 
+                  ${index % 2 === 0 ? 'sm:border-r sm:border-white/5' : ''}
+                  ${index < 2 ? 'sm:border-b sm:border-white/5' : ''}
                 `}
               >
                 {/* Background Number */}
@@ -130,16 +131,16 @@ export default function MethodologySection() {
                   {pillar.number}
                 </span>
 
-                <div className="relative z-10">
+                <div className="relative z-10 w-full">
                   <div className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 rounded-full mb-8 group-hover:border-white/30 transition-all duration-500">
                     <pillar.icon size={18} strokeWidth={1.2} className="text-white/60 group-hover:text-white transition-colors" />
                   </div>
 
-                  <h3 className="font-serif text-white text-xl lg:text-[24px] font-light leading-tight tracking-tight mb-4">
+                  <h3 className="font-serif text-white text-xl lg:text-[24px] font-light leading-tight tracking-tight mb-4 break-words">
                     {pillar.title}
                   </h3>
                   
-                  <p className="text-white/40 text-sm lg:text-[16px] leading-relaxed font-light max-w-sm">
+                  <p className="text-white/40 text-sm lg:text-[16px] leading-relaxed font-light max-w-sm break-words">
                     {pillar.description}
                   </p>
                 </div>

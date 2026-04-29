@@ -36,33 +36,36 @@ const steps = [
 export default function ProcessSection() {
   return (
     <section 
-      className="relative py-24 lg:py-40 bg-white overflow-hidden"
+      className="relative py-20 sm:py-24 lg:py-40 bg-white overflow-hidden"
     >
       {/* Structural Hairlines */}
       <div className="absolute inset-x-0 top-0 h-[1px] bg-petroleum/10" />
 
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
         
         {/* Header Section */}
-        <div className="mb-12 lg:mb-16">
-          <motion.span 
+        <div className="mb-12 lg:mb-20">
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="block text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-petroleum/50 font-medium font-sans mb-4"
+            className="flex items-center gap-4 mb-6"
           >
-            Como funciona
-          </motion.span>
+            <div className="w-8 h-[1px] bg-petroleum/20" />
+            <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-petroleum/50 font-medium font-sans">
+              Como funciona
+            </span>
+          </motion.div>
           
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.21, 0.45, 0.32, 0.9] }}
-            className="font-serif text-petroleum text-[clamp(40px,5vw,64px)] leading-[1.1] font-light tracking-tight max-w-4xl"
+            className="font-serif text-petroleum text-[clamp(32px,5vw,64px)] leading-[1.1] font-light tracking-tight max-w-4xl"
           >
-            O caminho do <br />
+            O caminho do <br className="hidden sm:block" />
             <span className="italic text-petroleum/40">primeiro contato</span> até a resolução
           </motion.h2>
         </div>
@@ -114,10 +117,10 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        {/* Timeline Mobile */}
-        <div className="lg:hidden space-y-16 relative">
+        {/* Timeline Tablet/Mobile */}
+        <div className="lg:hidden space-y-12 sm:space-y-16 relative">
           {/* Vertical Base Line */}
-          <div className="absolute left-[27px] top-4 bottom-4 w-[1px] bg-petroleum/5" />
+          <div className="absolute left-[27px] sm:left-[31px] top-4 bottom-4 w-[1px] bg-petroleum/10" />
           
           {steps.map((step, index) => (
             <motion.div
@@ -126,16 +129,16 @@ export default function ProcessSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex gap-8 group"
+              className="flex gap-6 sm:gap-8 group"
             >
-              <div className="shrink-0">
-                <div className="w-14 h-14 border border-petroleum/10 flex items-center justify-center bg-white group-hover:border-petroleum transition-all duration-500 rounded-full shrink-0">
-                  <span className="text-xs font-bold text-petroleum">{step.number}</span>
+              <div className="shrink-0 relative z-10">
+                <div className="w-14 h-14 sm:w-[62px] sm:h-[62px] border border-petroleum/10 flex items-center justify-center bg-white group-hover:border-petroleum transition-all duration-500 rounded-full shrink-0 shadow-sm">
+                  <span className="text-xs sm:text-sm font-bold text-petroleum">{step.number}</span>
                 </div>
               </div>
-              <div className="pt-2">
-                <h3 className="font-serif italic text-petroleum text-xl mb-3">{step.title}</h3>
-                <p className="text-refined-gray text-sm leading-relaxed font-light">{step.description}</p>
+              <div className="pt-2 sm:pt-3">
+                <h3 className="font-serif italic text-petroleum text-xl sm:text-2xl mb-2 sm:mb-3">{step.title}</h3>
+                <p className="text-refined-gray text-sm sm:text-base leading-relaxed font-light opacity-80">{step.description}</p>
               </div>
             </motion.div>
           ))}

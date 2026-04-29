@@ -17,7 +17,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-deep-navy">
+    <main className="min-h-screen bg-deep-navy overflow-x-hidden">
       <Hero />
       <TrustSection />
       <AboutSection />

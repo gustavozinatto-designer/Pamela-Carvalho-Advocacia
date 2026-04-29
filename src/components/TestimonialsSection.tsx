@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="depoimentos" className="relative py-24 lg:py-32 bg-[#050B13] overflow-hidden flex items-center justify-center min-h-[500px] border-t border-white/5">
+    <section id="depoimentos" className="relative py-20 sm:py-24 lg:py-32 bg-[#050B13] overflow-hidden flex items-center justify-center min-h-[500px] border-t border-white/5">
       {/* Background Image - Subtle Texture related to Law */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.22] grayscale">
         <img 
@@ -55,16 +55,20 @@ export default function TestimonialsSection() {
       {/* Signature Petroleum Glow */}
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-petroleum/10 blur-[150px] rounded-full translate-y-1/2 pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-20 relative z-10 text-center flex flex-col items-center w-full">
-        <motion.span 
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 relative z-10 text-center flex flex-col items-center w-full">
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="block text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-white/40 font-bold mb-4"
+          className="flex items-center gap-4 mb-6"
         >
-          Depoimentos
-        </motion.span>
+          <div className="w-8 h-[1px] bg-white/20" />
+          <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.6em] text-white/40 font-bold">
+            Depoimentos
+          </span>
+          <div className="w-8 h-[1px] bg-white/20" />
+        </motion.div>
 
-        <div className="relative w-full min-h-[300px] lg:min-h-[250px] flex items-center justify-center">
+        <div className="relative w-full min-h-[350px] sm:min-h-[300px] lg:min-h-[250px] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -75,14 +79,14 @@ export default function TestimonialsSection() {
               className="w-full flex flex-col items-center justify-center"
             >
               <div className="max-w-5xl w-full">
-                <p className="text-white text-[clamp(20px,2.5vw,36px)] leading-[1.5] font-serif italic tracking-tight mb-10 text-center px-4">
+                <p className="text-white text-[clamp(20px,3vw,36px)] leading-[1.6] sm:leading-[1.5] font-serif italic tracking-tight mb-10 text-center px-4 sm:px-8">
                   “{testimonials[index].quote}”
                 </p>
               </div>
               
               <div className="flex flex-col items-center">
                 <div className="w-12 h-[1px] bg-white/30 mb-5" />
-                <span className="text-[12px] lg:text-[14px] uppercase tracking-[0.3em] font-bold text-white mb-2">
+                <span className="text-[12px] sm:text-[13px] lg:text-[14px] uppercase tracking-[0.3em] font-bold text-white mb-2">
                   {testimonials[index].author}
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-white/40">
@@ -94,14 +98,14 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Progress Indicators */}
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-12 sm:mt-16 flex justify-center gap-3">
           {testimonials.map((_, i) => (
             <button
               id={`testimonial-dot-${i}`}
               key={i}
               onClick={() => setIndex(i)}
               className={`h-[2px] transition-all duration-700 ease-out ${
-                index === i ? 'w-12 bg-white' : 'w-4 bg-white/20'
+                index === i ? 'w-12 bg-white' : 'w-4 bg-white/20 hover:bg-white/40'
               }`}
             />
           ))}
@@ -109,7 +113,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Side "Double Quote" background elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[300px] font-serif italic text-white/[0.02] pointer-events-none select-none z-0">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[150px] sm:text-[300px] font-serif italic text-white/[0.02] pointer-events-none select-none z-0">
         “ ”
       </div>
     </section>
